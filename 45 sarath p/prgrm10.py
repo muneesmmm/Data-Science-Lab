@@ -1,0 +1,7 @@
+fin = open("f1.txt", "rt")
+data = fin.read()
+data = data.replace('hai','python')
+fin.close()
+fin = open("f1.txt", "wt")
+fin.write(data)
+fin.close()
