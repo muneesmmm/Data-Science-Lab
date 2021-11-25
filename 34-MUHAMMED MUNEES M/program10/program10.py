@@ -1,11 +1,14 @@
-#input file
+#read input file
 fin = open("data.txt", "rt")
-#output file to write the result to
-fout = open("out.txt", "wt")
-#for each line in the input file
-for str in fin:
-	#read replace the string and write to output file
-	fout.write(str.replace('pyton', 'python'))
-#close input and output files
+#read file contents to string
+data = fin.read()
+#replace all occurrences of the required string
+data = data.replace('pyton', 'python')
+#close the input file
 fin.close()
-fout.close()
+#open the input file in write mode
+fin = open("data.txt", "wt")
+#overrite the input file with the resulting data
+fin.write(data)
+#close the file
+fin.close()
