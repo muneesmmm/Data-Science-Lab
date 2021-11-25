@@ -1,0 +1,8 @@
+WITH OPEN("F.TXT") AS A:
+    WITH OPEN("F1.TXT","W") AS B:
+        FOR LINE IN A:
+            B.WRITE(LINE)
+FI=OPEN("F1.TXT")
+LI=FI.READLINES()
+FOR LINE IN LI:
+    PRINT(LINE)
