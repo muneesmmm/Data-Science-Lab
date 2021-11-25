@@ -1,0 +1,11 @@
+import numpy
+x=numpy.array([[1,2],[2,2]])
+y=numpy.array([[2,1],[1,1]])
+print("Matrix addition is:")
+print(numpy.add(x,y))
+print("Matrix subtraction is:")
+print(numpy.subtract(x,y))
+print("Matrix maultiplication is:")
+print(numpy.multiply(x,y))
+print("Matrix transpose is:")
+print(x,T)
