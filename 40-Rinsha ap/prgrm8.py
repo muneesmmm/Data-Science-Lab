@@ -1,8 +1,8 @@
-WITH OPEN("AB.TXT") AS F:
-    WITH OPEN("CD.TXT","W") AS F1:
-        FOR LINE IN F:
-            F1.WRITE(LINE)
-FI=OPEN("CD.TXT")
-LI=FI.READLINES()
-FOR LINE IN LI:
-    PRINT(LINE)
+with open("file.txt") as f:
+    with open("ss.txt","w") as f1:
+        for line in f:
+            f1.write(line)
+fi=open("ss.txt")
+li=fi.readlines()
+for line in li:
+    print(line)
