@@ -1,4 +1,5 @@
-from datetime import date, timedelta
-dt = date.today() - timedelta(5)
-print('Current Date :',date.today())
-print('5 days before Current Date :',dt)
+import shutil
+f=open("hello.txt")
+li=f.readlines()
+print (li)
+shutil.copyfile("hello.txt","wellcome.txt")
