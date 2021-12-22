@@ -1,0 +1,87 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.68 (7238) x86_64-apple-darwin13.4.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/mca/.Rapp.history]
+
+> print(getwd())
+[1] "/Users/mca"
+> setwd("/Users/mca/Documents")
+> print(getwd())
+[1] "/Users/mca/Documents"
+> food=read.csv("food.csv")
+> food
+   Ingredient Sweetness Crunchiness  FoodType
+1       apple        10           9     fruit
+2       bacon         1           4   protein
+3      banana        10           1     fruit
+4      carrot         7          10 vegetable
+5      celery         3          10 vegetable
+6      cheese         1           1   protein
+7    cucumber         2           8 vegetable
+8        fish         3           1   protein
+9       grape         8           5     fruit
+10 green bean         3           7 vegetable
+11    lettuce         1           9 vegetable
+12       nuts         3           6   protein
+13     orange         7           3     fruit
+14       pear        10           7     fruit
+15     shrimp         2           3   protein
+> tomato=data.frame(ingredient="tomato",sweetness=6,
++ crunchiness=4)
+> tomato
+  ingredient sweetness crunchiness
+1     tomato         6           4
+> food1=food[,2:3]
+> food1
+   Sweetness Crunchiness
+1         10           9
+2          1           4
+3         10           1
+4          7          10
+5          3          10
+6          1           1
+7          2           8
+8          3           1
+9          8           5
+10         3           7
+11         1           9
+12         3           6
+13         7           3
+14        10           7
+15         2           3
+> tomato1=tomato[,2:3]
+> tomato1
+  sweetness crunchiness
+1         6           4
+> library(class)
+> pred=knn(food1,tomato1,food$FoodType,k=1)
+> pred
+[1] fruit
+Levels: fruit protein vegetable
+> 
