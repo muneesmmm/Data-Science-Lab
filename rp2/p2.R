@@ -1,0 +1,9 @@
+std=read.csv("survey.csv")
+std
+ramu=data.frame(x=5,y=7)
+ramu
+std1=std[,1:2]
+std1
+library(class)
+pred1=knn(std1,ramu,survey$Z,k=3)
+pred1
