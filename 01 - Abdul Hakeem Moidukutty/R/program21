@@ -9,7 +9,7 @@ food
 
 # Creates a data frame of food item tomato
 
-tomate=data.frame(ingredient="tomato", sweetness=6,crunchiness=4)
+tomato=data.frame(ingredient="tomato", sweetness=6,crunchiness=4)
 
 # prints the tomato data frame
 
@@ -27,7 +27,7 @@ tomato1
 
 #Load package class which contains knn()
 
-libraty (class)
+library (class)
 
 # Use knn() and store the prediction in pred
 # argument 1 is the data frame containing training data 
