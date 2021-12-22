@@ -1,0 +1,9 @@
+stud <-read.csv ("survey.csv")
+stud
+stud1=data.frame (X=5, Y=7)
+stud1
+stud2=stud[,1:2]
+stud2
+library(class)
+res=knn(stud2,stud1,stud$Z,k=3)
+res
