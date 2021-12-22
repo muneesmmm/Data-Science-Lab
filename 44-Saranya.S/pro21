@@ -1,0 +1,132 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> print(getwd())
+[1] "C:/Users/admin/Documents"
+> setwd("C:/Users/admin/Desktop/44-Saranya.S")
+> print
+function (x, ...) 
+UseMethod("print")
+<bytecode: 0x000000000ea67880>
+<environment: namespace:base>
+> print(getwd())
+[1] "C:/Users/admin/Desktop/44-Saranya.S"
+> food=read.csv("food.csv")
+> food
+   Ingredient Sweetness Crunchiness  FoodType
+1       apple        10           9     fruit
+2       bacon         1           4   protein
+3      banana        10           1     fruit
+4      carrot         7          10 vegetable
+5      celery         3          10 vegetable
+6      cheese         1           1   protein
+7    cucumber         2           8 vegetable
+8        fish         3           1   protein
+9       grape         8           5     fruit
+10 green bean         3           7 vegetable
+11    lettuce         1           9 vegetable
+12       nuts         3           6   protein
+13     orange         7           3     fruit
+14       pear        10           7     fruit
+15     shrimp         2           3   protein
+> > tomato=data.frame(ingredient="tomato",sweetness=6,
+Error: unexpected '>' in ">"
+> crunchiness=4)
+Error: unexpected ')' in "crunchiness=4)"
+> tomato=data.frame(ingredient="tomato",sweetness=6,
++ crunchiness=4)
+> tomato
+  ingredient sweetness crunchiness
+1     tomato         6           4
+> food1=food[,2:3]
+> food1
+   Sweetness Crunchiness
+1         10           9
+2          1           4
+3         10           1
+4          7          10
+5          3          10
+6          1           1
+7          2           8
+8          3           1
+9          8           5
+10         3           7
+11         1           9
+12         3           6
+13         7           3
+14        10           7
+15         2           3
+> tomato1=tomato[,2:3]
+> tomato1
+  sweetness crunchiness
+1         6           4
+> library(class)
+> pred=knn(food1,tomato1,food$FoodType,k=1)
+> pred
+[1] fruit
+Levels: fruit protein vegetable
+> save.image("C:\\Users\\admin\\Desktop\\program21.R")
+> save.image("C:\\Users\\admin\\Desktop\\program21")
+> survey=read.csv("survey.csv")
+> survey
+  X Y           Z
+1 8 6 Outstanding
+2 5 6        Good
+3 7 3        Good
+4 6 9 Outstanding
+> student=data.frame(X="5",Y="7")
+> student
+  X Y
+1 5 7
+> survey1=survey[,2:3]
+> survey1
+  Y           Z
+1 6 Outstanding
+2 6        Good
+3 3        Good
+4 9 Outstanding
+> student1=student1[,2:3]
+Error: object 'student1' not found
+> student1=student[,2:3]
+Error in `[.data.frame`(student, , 2:3) : undefined columns selected
+> survey1=survey[,1:2]
+> survey1
+  X Y
+1 8 6
+2 5 6
+3 7 3
+4 6 9
+> student1=student[,1:2]
+> student1
+  X Y
+1 5 7
+> library(class)
+> pred=knn(survey1,student1,survey$SurveyType,k=1)
+Error in knn(survey1, student1, survey$SurveyType, k = 1) : 
+  'train' and 'class' have different lengths
+In addition: Warning message:
+In is.na(cl) : is.na() applied to non-(list or vector) of type 'NULL'
+> pred=knn(survey1,student1,survey$Z,k=3)
+> pred
+[1] Outstanding
+Levels: Good Outstanding
+> save.image("C:\\Users\\admin\\Desktop\\program22")
+> 
