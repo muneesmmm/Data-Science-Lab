@@ -1,4 +1,4 @@
-file=open("abc.txt","r")
+file=open("ab.txt","r")
 counter=0
 content=file.read()
 colist=content.split("\n")
