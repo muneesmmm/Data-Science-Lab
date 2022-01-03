@@ -42,8 +42,6 @@ Type 'q()' to quit R.
 > tomato
   ingrediant sweetness crunchiness
 1     tomato         6           4
-> food1=food{,2:3]
-Error: unexpected '{' in "food1=food{"
 > food1=food[,2:3]
 > food1
    Sweetness Crunchiness

@@ -43,11 +43,6 @@ Type 'q()' to quit R.
   X Y
 1 5 7
 > library(class)
-> pred=knn(survey1,student1,survey$z,k=3)
-Error in knn(survey1, student1, survey$z, k = 3) : 
-  'train' and 'class' have different lengths
-In addition: Warning message:
-In is.na(cl) : is.na() applied to non-(list or vector) of type 'NULL'
 > pred=knn(survey1,student1,survey$Z,k=3)
 > pred
 [1] Outstanding
