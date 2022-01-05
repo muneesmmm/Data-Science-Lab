@@ -1,0 +1,38 @@
+
+
+> print(getwd())
+[1] "/Users/mes21"
+> setwd("/Users/mes1/desktop/30 Mubashirakm")
+Error in setwd("/Users/mes1/desktop/30 Mubashirakm") : 
+  cannot change working directory
+> setwd("/Users/mes21/desktop/30 Mubashirakm")
+> print(getwd())
+[1] "/Users/mes21/Desktop/30 mubashirakm"
+> survey=read.csv("survey.csv")
+> survey
+  X Y           Z
+1 8 6 Outstanding
+2 5 6        Good
+3 7 3        Good
+4 6 9 Outstanding
+> new_stud=data.frame(X=5,Y=7)
+> new_stud
+  X Y
+1 5 7
+> student=survey[,1:2]
+> student
+  X Y
+1 8 6
+2 5 6
+3 7 3
+4 6 9
+> new_stud1=new_stud[,1:2]
+> new_stud1
+  X Y
+1 5 7
+> library(class)
+> pred=knn(student,new_stud1,survey$Z,k=3)
+> pred
+[1] Outstanding
+Levels: Good Outstanding
+> 

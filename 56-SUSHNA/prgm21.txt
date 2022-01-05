@@ -1,7 +1,6 @@
-
 R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
 Copyright (C) 2016 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -17,9 +16,21 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
+[R.app GUI 1.68 (7238) x86_64-apple-darwin13.4.0]
+
+[History restored from /Users/mes1/.Rapp.history]
+
+> food=read.csv("food.csv")
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'food.csv': No such file or directory
 > print(getwd())
-[1] "C:/Users/admin/Documents"
-> setwd("C:/Users/admin/Desktop/20 HIBA NAFEESATH")
+[1] "/Users/mes1"
+> setwd("/Users/mes1/DESKTOP/DSML SUSHNA")
+> print(getwd())
+[1] "/Users/mes1/Desktop/DSML SUSHNA"
+
 > food=read.csv("food.csv")
 > food
    Ingredient Sweetness Crunchiness  FoodType
@@ -38,11 +49,12 @@ Type 'q()' to quit R.
 13     orange         7           3     fruit
 14       pear        10           7     fruit
 15     shrimp         2           3   protein
-> tomato=data.frame(ingrediant="tomato",sweetness=6,crunchiness=4)
+> tomato=data.frame(ingredient="tomato",sweetness=6,
++ crunchiness=4)
 > tomato
-  ingrediant sweetness crunchiness
+  ingredient sweetness crunchiness
 1     tomato         6           4
-> food1=food[,2:3]
+>  food1=food[,2:3]
 > food1
    Sweetness Crunchiness
 1         10           9

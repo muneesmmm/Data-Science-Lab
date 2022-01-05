@@ -34,5 +34,5 @@ Error: object 'survey' not found
 > pred
 [1] Outstanding
 Levels: Good Outstanding
-> save.image("C:\\Users\\admin\\Desktop\\58-ummuhabeeba\\p22")
+> save.image("C:\\Users\\admin\\Desktop\\33-shuhairvk\\22")
 > 

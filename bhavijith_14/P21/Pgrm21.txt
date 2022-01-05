@@ -19,7 +19,7 @@ Type 'q()' to quit R.
 
 > print(getwd())
 [1] "C:/Users/admin/Documents"
-> setwd("C:/Users/admin/Desktop/20 HIBA NAFEESATH")
+> setwd("C:/Users/admin/Desktop/18 Fathimath Suhara")
 > food=read.csv("food.csv")
 > food
    Ingredient Sweetness Crunchiness  FoodType
@@ -38,9 +38,9 @@ Type 'q()' to quit R.
 13     orange         7           3     fruit
 14       pear        10           7     fruit
 15     shrimp         2           3   protein
-> tomato=data.frame(ingrediant="tomato",sweetness=6,crunchiness=4)
+> tomato=data.frame(Ingredient="tomato",Sweetness=6,Crunchiness=4)
 > tomato
-  ingrediant sweetness crunchiness
+  Ingredient Sweetness Crunchiness
 1     tomato         6           4
 > food1=food[,2:3]
 > food1
@@ -62,7 +62,7 @@ Type 'q()' to quit R.
 15         2           3
 > tomato1=tomato[,2:3]
 > tomato1
-  sweetness crunchiness
+  Sweetness Crunchiness
 1         6           4
 > library(class)
 > pred=knn(food1,tomato1,food$FoodType,k=1)
