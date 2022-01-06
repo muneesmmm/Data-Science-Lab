@@ -34,8 +34,6 @@ Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system prefe
 > library(gmodels)
 > wbcd = read.csv("wisc_bc_data.csv")
 > normalize <- function(x)
-+ {}
-> normalize <- function(x)
 + {return ((x-min(x))/(max(x)-min(x)))}
 > wbcd_n = as.data.frame(lapply(wbcd[3:31], normalize))
 > wbcd_train = wbcd_n[1:469, ]
@@ -79,6 +77,3 @@ wbcd_test_labels |         B |         M | Row Total |
     Column Total |        79 |        21 |       100 | 
                  |     0.790 |     0.210 |           | 
 -----------------|-----------|-----------|-----------|
-
- 
-> 
