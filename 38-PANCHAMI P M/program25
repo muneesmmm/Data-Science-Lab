@@ -1,0 +1,119 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> install.packages("gmodels")
+Installing package into ‘C:/Users/admin/Documents/R/win-library/4.1’
+(as ‘lib’ is unspecified)
+--- Please select a CRAN mirror for use in this session ---
+also installing the dependencies ‘gtools’, ‘gdata’
+
+trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/4.1/gtools_3.9.2.zip'
+Content type 'application/zip' length 367237 bytes (358 KB)
+downloaded 358 KB
+
+trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/4.1/gdata_2.18.0.zip'
+Content type 'application/zip' length 1264727 bytes (1.2 MB)
+downloaded 1.2 MB
+
+trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/4.1/gmodels_2.18.1.zip'
+Content type 'application/zip' length 114190 bytes (111 KB)
+downloaded 111 KB
+
+package ‘gtools’ successfully unpacked and MD5 sums checked
+package ‘gdata’ successfully unpacked and MD5 sums checked
+package ‘gmodels’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\admin\AppData\Local\Temp\RtmpUTqzxm\downloaded_packages
+> library(e1071)
+> library(caTools)
+> library(gmodels)
+> 
+> exit()l;
+Error: unexpected symbol in "exit()l"
+> exit();
+Error in exit() : could not find function "exit"
+> end
+function (x, ...) 
+UseMethod("end")
+<bytecode: 0x000000000f70dea0>
+<environment: namespace:stats>
+> library(e1071)
+> cars=read.csv("cars.csv")
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'cars.csv': No such file or directory
+> setwd("C:/Users/admin/Desktop/38-PANCHAMI.P.M")
+> library(e1071)
+> cars=read.csv("cars.csv")
+> cars_test=data.frame(Colour="red",Type="SUV",Origin="domestic",Stolen="yes")
+> classifier_cl <- naiveBayes(cars_train,cars$Stolen)
+Error in naiveBayes(cars_train, cars$Stolen) : 
+  object 'cars_train' not found
+> cars_train=cars[,1:4]
+> cars_test=data.frame(Colour="red",Type="SUV",Origin="domestic",Stolen="yes")
+> classifier_cl <- naiveBayes(cars_train,cars$Stolen)
+> classifier_cl 
+
+Naive Bayes Classifier for Discrete Predictors
+
+Call:
+naiveBayes.default(x = cars_train, y = cars$Stolen)
+
+A-priori probabilities:
+cars$Stolen
+ no yes 
+0.5 0.5 
+
+Conditional probabilities:
+           Example
+cars$Stolen [,1]     [,2]
+        no   5.8 2.863564
+        yes  5.2 3.492850
+
+           Colour
+cars$Stolen red yellow
+        no  0.4    0.6
+        yes 0.6    0.4
+
+           Type
+cars$Stolen sports SUV
+        no     0.4 0.6
+        yes    0.8 0.2
+
+           Origin
+cars$Stolen domestic imported
+        no       0.6      0.4
+        yes      0.4      0.6
+
+> cars_test_pred <- predict(classifier_cl, cars_test)
+Warning message:
+In predict.naiveBayes(classifier_cl, cars_test) :
+  Type mismatch between training and new data for variable 'Example'. Did you use factors with numeric labels for training, and numeric values for new data?
+> cars_test_pred <- predict(classifier_cl, cars_test)
+Warning message:
+In predict.naiveBayes(classifier_cl, cars_test) :
+  Type mismatch between training and new data for variable 'Example'. Did you use factors with numeric labels for training, and numeric values for new data?
+> cat("Prediction of Stolen or not:\n")
+Prediction of Stolen or not:
+> cars_test_pred
+[1] no
+Levels: no yes
+> 
