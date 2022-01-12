@@ -1,0 +1,83 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.68 (7238) x86_64-apple-darwin13.4.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/mes23/.Rapp.history]
+
+> print(getwd())
+[1] "/Users/mes23"
+> setwd("/Users/mes23/Desktop/R/24")
+> library(e1071)
+Warning message:
+package 'e1071' was built under R version 3.3.2 
+> symptoms=read.csv("symptoms.csv")
+> symptoms_train=symptoms[,1:4]
+> symptoms_test=data.frame(Chills="Y",RunningNose="N", Headache="mild",Fever="Y")
+> classifier_cl <- naiveBayes(symptoms_train,symptoms$HasFlu)
+> classifier_cl
+
+Naive Bayes Classifier for Discrete Predictors
+
+Call:
+naiveBayes.default(x = symptoms_train, y = symptoms$HasFlu)
+
+A-priori probabilities:
+symptoms$HasFlu
+    N     Y 
+0.375 0.625 
+
+Conditional probabilities:
+               Chills
+symptoms$HasFlu         N         Y
+              N 0.6666667 0.3333333
+              Y 0.4000000 0.6000000
+
+               RunningNose
+symptoms$HasFlu         N         Y
+              N 0.6666667 0.3333333
+              Y 0.2000000 0.8000000
+
+               Headache
+symptoms$HasFlu      mild        no    strong
+              N 0.3333333 0.3333333 0.3333333
+              Y 0.4000000 0.2000000 0.4000000
+
+               Fever
+symptoms$HasFlu         N         Y
+              N 0.6666667 0.3333333
+              Y 0.2000000 0.8000000
+
+> symptoms_test_pred <- predict(classifier_cl, symptoms_test) 
+> cat("Prediction of Flu:\n") 
+Prediction of Flu:
+> symptoms_test_pred
+[1] N
+Levels: N Y
+> 
+> 
+> 
