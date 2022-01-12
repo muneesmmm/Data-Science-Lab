@@ -1,0 +1,9 @@
+suy=read.csv("survey.csv")
+suy
+std=data.frame(X=5,Y=7)
+std
+suy1=suy[,1:2]
+suy1
+library(class)
+clas=knn(suy1,std,suy$Z,k=3)
+clas

@@ -1,0 +1,156 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> setwd("C:\Users\admin\Desktop\58-ummuhabeeba")
+Error: '\U' used without hex digits in character string starting ""C:\U"
+> print(getwd())
+[1] "C:/Users/admin/Documents"
+> setwd("C:\Users\admin\Desktop\58-ummuhabeeba")
+Error: '\U' used without hex digits in character string starting ""C:\U"
+> setwd("C:/Users/admin/Desktop/58-ummuhabeeba")
+> print(getwd())
+[1] "C:/Users/admin/Desktop/58-ummuhabeeba"
+> library(class)
+> library(gmodels)
+Error in library(gmodels) : there is no package called ‘gmodels’
+> install.packages("gmodels")
+Warning in install.packages("gmodels") :
+  'lib = "C:/Program Files/R/R-3.3.1/library"' is not writable
+Error in install.packages("gmodels") : unable to install packages
+> wbcd = read.csv("wisc_bc_data.csv")
+> normalize <- function(x)
++ {
++ return ((x - min(x)) / (max(x) - min(x)))
++ }
+Error: unexpected end of input
+> normalize <- function(x)\
+Error: unexpected input in "normalize <- function(x)\"
+> library(class)
+> library(gmodels)
+Error in library(gmodels) : there is no package called ‘gmodels’
+> library(gmodels)
+Error in library(gmodels) : there is no package called ‘gmodels’
+> q()
+> utils:::menuInstallLocal()
+> utils:::menuInstallPkgs()
+--- Please select a CRAN mirror for use in this session ---
+Warning: failed to download mirrors file (cannot open URL 'https://cran.r-project.org/CRAN_mirrors.csv'); using local file 'C:/PROGRA~1/R/R-33~1.1/doc/CRAN_mirrors.csv'
+Warning in install.packages(NULL, .libPaths()[1L], dependencies = NA, type = type) :
+  'lib = "C:/Program Files/R/R-3.3.1/library"' is not writable
+also installing the dependencies ‘gtools’, ‘gdata’
+
+
+  There are binary versions available but the source versions are later:
+        binary source needs_compilation
+gtools   3.5.0  3.9.2              TRUE
+gmodels 2.16.2 2.18.1             FALSE
+
+  Binaries will be installed
+trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/3.3/gtools_3.5.0.zip'
+Content type 'application/zip' length 144033 bytes (140 KB)
+downloaded 140 KB
+
+trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/3.3/gdata_2.18.0.zip'
+Content type 'application/zip' length 1186908 bytes (1.1 MB)
+downloaded 1.1 MB
+
+package ‘gtools’ successfully unpacked and MD5 sums checked
+package ‘gdata’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\admin\AppData\Local\Temp\RtmpikKiqa\downloaded_packages
+installing the source package ‘gmodels’
+
+trying URL 'http://ftp.ussg.iu.edu/CRAN/src/contrib/gmodels_2.18.1.tar.gz'
+Content type 'application/x-gzip' length 33783 bytes (32 KB)
+downloaded 32 KB
+
+* installing *source* package 'gmodels' ...
+** package 'gmodels' successfully unpacked and MD5 sums checked
+** R
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+*** arch - i386
+*** arch - x64
+* DONE (gmodels)
+
+The downloaded source packages are in
+        ‘C:\Users\admin\AppData\Local\Temp\RtmpikKiqa\downloaded_packages’
+Warning message:
+In download.file(url, destfile = f, quiet = TRUE) :
+  InternetOpenUrl failed: ''
+> library(gmodels)
+> wbcd = read.csv("wisc_bc_data.csv")
+> library(class)
+> library(gmodels)
+> wbcd = read.csv("wisc_bc_data.csv")
+> normalize <- function(x)
++ {
++ return ((x - min(x)) / (max(x) - min(x)))
++ }
+> wbcd_n = as.data.frame(lapply(wbcd[3:31], normalize))
+> wbcd_train = wbcd_n[1:469, ]
+> wbcd_test = wbcd_n[470:569, ]
+> wbcd_train_labels = wbcd[1:469, 2]
+> wbcd_test_labels = wbcd[470:569, 2]
+> wbcd_test_pred = knn(wbcd_train, wbcd_test,
++ wbcd_train_labels,21)
+> wbcd_test_pred
+  [1] B B B B B B B B B B M B B B B B B B M B B B B M B B B B B M M B M B M B B B B B M B B M B B B M M B B B M B B B B B B B B B B B M B M M B B B B B B B B B B B B B
+ [82] B B B B B B B B B B B B M M M M M M B
+Levels: B M
+> save.image("C:\\Users\\admin\\Desktop\\58-ummuhabeeba\\23.RData")
+> CrossTable(x = wbcd_test_labels, y = wbcd_test_pred,
++ prop.chisq=FALSE)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  100 
+
+ 
+                 | wbcd_test_pred 
+wbcd_test_labels |         B |         M | Row Total | 
+-----------------|-----------|-----------|-----------|
+               B |        77 |         0 |        77 | 
+                 |     1.000 |     0.000 |     0.770 | 
+                 |     0.975 |     0.000 |           | 
+                 |     0.770 |     0.000 |           | 
+-----------------|-----------|-----------|-----------|
+               M |         2 |        21 |        23 | 
+                 |     0.087 |     0.913 |     0.230 | 
+                 |     0.025 |     1.000 |           | 
+                 |     0.020 |     0.210 |           | 
+-----------------|-----------|-----------|-----------|
+    Column Total |        79 |        21 |       100 | 
+                 |     0.790 |     0.210 |           | 
+-----------------|-----------|-----------|-----------|
+
+ 
+> 

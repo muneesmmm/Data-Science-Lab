@@ -1,0 +1,81 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> ("C:/Users/admin/Desktop/38panchami")
+[1] "C:/Users/admin/Desktop/38panchami"
+> ("C:/Users/admin/Desktop/38panchami")
+[1] "C:/Users/admin/Desktop/38panchami"
+> setwd("C:/Users/admin/Desktop/38panchami")
+> library(class)
+> library(gmodels)
+> wbcd=read.csv("wisc_bc_data.csv")
+> normalize <- function(x)
++ {
++ return ((x - min(x)) / (max(x) - min(x)))
++ }
+> wbcd_n = as.data.frame(lapply(wbcd[3:31], normalize))
+>  wbcd_train = wbcd_n[1:469, ]
+> wbcd_test = wbcd_n[470:569, ]
+> wbcd_train_labels = wbcd[1:469, 2]
+>  wbcd_test_labels = wbcd[470:569, 2]
+> wbcd_test_pred = knn(wbcd_train, wbcd_test,
++ wbcd_train_labels,21)
+> wbcd_test_pred
+  [1] B B B B B B B B B B M B B B B B B B M
+ [20] B B B B M B B B B B M M B M B M B B B
+ [39] B B M B B M B B B M M B B B M B B B B
+ [58] B B B B B B B M B M M B B B B B B B B
+ [77] B B B B B B B B B B B B B B B B B M M
+ [96] M M M M B
+Levels: B M
+> CrossTable(x = wbcd_test_labels, y = wbcd_test_pred,
++ prop.chisq=FALSE)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  100 
+
+ 
+                 | wbcd_test_pred 
+wbcd_test_labels |         B |         M | Row Total | 
+-----------------|-----------|-----------|-----------|
+               B |        77 |         0 |        77 | 
+                 |     1.000 |     0.000 |     0.770 | 
+                 |     0.975 |     0.000 |           | 
+                 |     0.770 |     0.000 |           | 
+-----------------|-----------|-----------|-----------|
+               M |         2 |        21 |        23 | 
+                 |     0.087 |     0.913 |     0.230 | 
+                 |     0.025 |     1.000 |           | 
+                 |     0.020 |     0.210 |           | 
+-----------------|-----------|-----------|-----------|
+    Column Total |        79 |        21 |       100 | 
+                 |     0.790 |     0.210 |           | 
+-----------------|-----------|-----------|-----------|
+
+ 
+> 

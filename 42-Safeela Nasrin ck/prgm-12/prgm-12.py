@@ -11,6 +11,6 @@ while True:
     if not data:
         break
     else:
-        print(string_match(data))
+        string_match(data)
 print (count)
 bitfile.close()
