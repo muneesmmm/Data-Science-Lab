@@ -1,0 +1,12 @@
+ iris = read.csv("iris.csv")
+
+ set.seed(100)
+ split <- sample.split(iris$species, SplitRatio = 0.7)
+ iris1 <- subset(iris, split == "TRUE")
+ iris2 <- subset(iris, split == "FALSE")
+ iris_train = iris1[,1:4]
+ iris_test = iris2[,1:4]
+ iris_train_labels = iris1[,5]
+ iris_test_labels = iris2[,5]
+ classifier_cl <- naiveBayes(iris_train,iris_train_labels )
+  naiveBayes(iris_train,iris_train_labels )
