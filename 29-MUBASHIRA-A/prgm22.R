@@ -1,0 +1,11 @@
+survey=read.csv("survey.csv")
+survey
+new_stud=data.frame(X=5,Y=7)
+new_stud
+student=survey[,1:2]
+student
+new_stud1=new_stud[,1:2]
+new_stud1
+library(class)
+pred=knn(student,new_stud1,survey$Z,k=3)
+pred
