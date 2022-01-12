@@ -1,0 +1,75 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> print(getwd())
+[1] "C:/Users/admin/Documents"
+> setwd("C:\Users\admin\Desktop\sarathp45/pgm24")
+Error: '\U' used without hex digits in character string starting ""C:\U"
+> setwd("C:/Users/admin/Desktop/sarathp45/pgm24")
+> library(e1071)
+> symptoms=read.csv("symptoms.csv")
+> symptoms_train=symptoms[,1:4]
+> symptoms_test=data.frame(Chills="Y",RunningNose="N",
++ Headache="mild",Fever="Y")
+> classifier_cl <- predict(classifier_cl, symptoms_test)
+Error in predict(classifier_cl, symptoms_test) : 
+  object 'classifier_cl' not found
+> classifier_cl <- naiveBayes(symptoms_train,symptoms$HasFlu)
+> classifier_cl
+
+Naive Bayes Classifier for Discrete Predictors
+
+Call:
+naiveBayes.default(x = symptoms_train, y = symptoms$HasFlu)
+
+A-priori probabilities:
+symptoms$HasFlu
+    N     Y 
+0.375 0.625 
+
+Conditional probabilities:
+               Chills
+symptoms$HasFlu         N         Y
+              N 0.6666667 0.3333333
+              Y 0.4000000 0.6000000
+
+               RunningNose
+symptoms$HasFlu         N         Y
+              N 0.6666667 0.3333333
+              Y 0.2000000 0.8000000
+
+               Headache
+symptoms$HasFlu      mild        no    strong
+              N 0.3333333 0.3333333 0.3333333
+              Y 0.4000000 0.2000000 0.4000000
+
+               Fever
+symptoms$HasFlu         N         Y
+              N 0.6666667 0.3333333
+              Y 0.2000000 0.8000000
+
+> symptoms_test_pred <- predict(classifier_cl, symptoms_test)
+> cat("Prediction of Flu:\n")
+Prediction of Flu:
+> symptoms_test_pred
+[1] N
+Levels: N Y
+> 
