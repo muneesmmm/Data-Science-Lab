@@ -1,0 +1,68 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> print(getwd())
+[1] "C:/Users/admin/Documents"
+> setwd("C:/Users/admin/Desktop/20 -HIBA NAFEESATH/25th")
+> library(e1071)
+> cars = read.csv("cars.csv")
+> cars_train = cars[,1:4]
+> cars_test=data.frame(Colour=
++ "red",Type="SUV",Origin="domestic",Stolen="yes")
+> classifier_cl <- naiveBayes(cars_train,cars$Stolen)
+> classifier_cl
+
+Naive Bayes Classifier for Discrete Predictors
+
+Call:
+naiveBayes.default(x = cars_train, y = cars$Stolen)
+
+A-priori probabilities:
+cars$Stolen
+ no yes 
+0.5 0.5 
+
+Conditional probabilities:
+           Example
+cars$Stolen [,1]     [,2]
+        no   5.8 2.863564
+        yes  5.2 3.492850
+
+           Colour
+cars$Stolen red yellow
+        no  0.4    0.6
+        yes 0.6    0.4
+
+           Type
+cars$Stolen sports SUV
+        no     0.4 0.6
+        yes    0.8 0.2
+
+           Origin
+cars$Stolen domestic imported
+        no       0.6      0.4
+        yes      0.4      0.6
+
+> carss_test_pred <- predict(classifier_cl, cars_test)
+> cat("Prediction of Stolen or not:\n")
+Prediction of Stolen or not:
+> carss_test_pred
+[1] yes
+Levels: no yes
+> 
