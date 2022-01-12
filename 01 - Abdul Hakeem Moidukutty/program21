@@ -1,0 +1,39 @@
+# Change the current working directory
+# Read the csv file into a data frame
+
+food=read.csv("food.csv)
+
+# Prints food data frame
+
+food
+
+# Creates a data frame of food item tomato
+
+tomate=data.frame(ingredient="tomato", sweetness=6,crunchiness=4)
+
+# prints the tomato data frame
+
+tomato
+
+# Create a data frame of second and third columns of food
+
+food1=food[,2:3]
+food1
+
+# tomato
+
+tomato1=tomato[,2:3]
+tomato1
+
+#Load package class which contains knn()
+
+libraty (class)
+
+# Use knn() and store the prediction in pred
+# argument 1 is the data frame containing training data 
+# argument 2 is the data frame containing test data
+# argument 3 is a vector that show the class of each item
+# in the training data, argument 4 is the value of k
+
+pred=knn(food1,tomato1,food$FoodType,k=1)
+pred
