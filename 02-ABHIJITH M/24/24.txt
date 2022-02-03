@@ -30,8 +30,8 @@ Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system prefe
 [History restored from /Users/mes27/.Rapp.history]
 
 > print(getwd())
-[1] "/Users/mes27"
-> setwd("/Users/mes27/Downloads/Data-Science-Lab-main 2/Programs/Data")
+[1] "/Users/mes8"
+> setwd("/Users/mes8/Desktop/Abhijith/24")
 > library(e1071)
 Error in library(e1071) : there is no package called 'e1071'
 also installing the dependencies 'mlbench', 'randomForest', 'SparseM', 'xtable'
