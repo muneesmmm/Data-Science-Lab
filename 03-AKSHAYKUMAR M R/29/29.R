@@ -1,0 +1,15 @@
+print(getwd())
+setwd("/Users/mes22/Desktop/R/29")
+credit=read.csv("credit.csv")
+library(C50)
+library(gmodels)
+credit_train<-credit[1:900,-17]
+credit_test<-credit[901:1000,-17]
+credit_train_labels=credit[1:900,17]
+credit_test_labels=credit[901:1000,17]
+credit_model<-C5.0(credit_train,as.factor(credit_train_labels))
+credit_model
+summary(credit_model)
+credit_pred<-predict(credit_model,credit_test)
+credit_pred
+CrossTable(credit_test_labels,credit_pred,prop.chisq=FALSE)
