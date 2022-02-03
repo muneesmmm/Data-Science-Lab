@@ -1,5 +1,5 @@
 print(getwd())
-setwd("/Users/mes22/Desktop/R/25")
+setwd("/Users/mes2/Desktop/Sooraj/25")
 library(e1071)
 cars=read.csv("cars.csv")
 cars_train=cars[,1:4]
