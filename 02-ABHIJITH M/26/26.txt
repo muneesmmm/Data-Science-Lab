@@ -30,8 +30,8 @@ Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system prefe
 [History restored from /Users/mes27/.Rapp.history]
 
 > print(getwd())
-[1] "/Users/mes27"
-> setwd("/Users/mes27/Desktop/say47/26")
+[1] "/Users/mes8"
+> setwd("/Users/mes8/Desktop/Abhijith/25")
 > library(e1071)
 > library(caTools)
 > ibrary(gmodels)
