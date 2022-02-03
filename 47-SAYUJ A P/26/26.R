@@ -1,5 +1,5 @@
 print(getwd())
-setwd("/Users/mes22/Desktop/R/26")
+setwd("/Users/mes27/Desktop/say47/25")
 library(e1071)
 library(caTools)
 library(gmodels)
