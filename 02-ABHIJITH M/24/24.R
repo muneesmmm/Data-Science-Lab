@@ -1,5 +1,5 @@
 print(getwd())
-setwd("/Users/mes22/Desktop/R/24")
+setwd("/Users/mes8/Desktop/Abhijith/23")
 library(e1071)
 symptoms = read.csv("symptoms.csv")
 symptoms_train = symptoms[,1:4] 
