@@ -1,0 +1,16 @@
+print(getwd())
+setwd("C:/Users/admin/Desktop/deepika")
+print(getwd())
+survey=read.csv("survey.csv")
+survey
+student=data.frame(X="5",Y="7")
+student
+survey1=survey[,2:3]
+survey1
+survey1=survey[,1:2]
+survey1
+student=student[,1:2]
+student
+library(class)
+pred=knn(survey1,student,survey$Z,k=3)
+pred
