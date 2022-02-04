@@ -1,0 +1,171 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> getwd()
+[1] "C:/Users/admin/Documents"
+> setwd("C:/Users/admin/Desktop/51_sneha.k")
+> utils:::menuInstallPkgs()
+--- Please select a CRAN mirror for use in this session ---
+also installing the dependencies ‘Rcpp’, ‘stringr’, ‘libcoin’, ‘mvtnorm’, ‘Formula’, ‘inum’, ‘reshape2’, ‘partykit’, ‘Cubist’
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/Rcpp_1.0.8.zip'
+Content type 'application/zip' length 3318072 bytes (3.2 MB)
+downloaded 3.2 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/stringr_1.4.0.zip'
+Content type 'application/zip' length 217015 bytes (211 KB)
+downloaded 211 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/libcoin_1.0-9.zip'
+Content type 'application/zip' length 1005126 bytes (981 KB)
+downloaded 981 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/mvtnorm_1.1-3.zip'
+Content type 'application/zip' length 271312 bytes (264 KB)
+downloaded 264 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/Formula_1.2-4.zip'
+Content type 'application/zip' length 177681 bytes (173 KB)
+downloaded 173 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/inum_1.0-4.zip'
+Content type 'application/zip' length 39410 bytes (38 KB)
+downloaded 38 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/reshape2_1.4.4.zip'
+Content type 'application/zip' length 817934 bytes (798 KB)
+downloaded 798 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/partykit_1.2-15.zip'
+Content type 'application/zip' length 2455480 bytes (2.3 MB)
+downloaded 2.3 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/Cubist_0.3.0.zip'
+Content type 'application/zip' length 993541 bytes (970 KB)
+downloaded 970 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/C50_0.1.5.zip'
+Content type 'application/zip' length 476525 bytes (465 KB)
+downloaded 465 KB
+
+package ‘Rcpp’ successfully unpacked and MD5 sums checked
+package ‘stringr’ successfully unpacked and MD5 sums checked
+package ‘libcoin’ successfully unpacked and MD5 sums checked
+package ‘mvtnorm’ successfully unpacked and MD5 sums checked
+package ‘Formula’ successfully unpacked and MD5 sums checked
+package ‘inum’ successfully unpacked and MD5 sums checked
+package ‘reshape2’ successfully unpacked and MD5 sums checked
+package ‘partykit’ successfully unpacked and MD5 sums checked
+package ‘Cubist’ successfully unpacked and MD5 sums checked
+package ‘C50’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\admin\AppData\Local\Temp\RtmpasCP56\downloaded_packages
+> library(C50)
+> person<-read.csv("person.csv")
+> person_train<-person[1:7,-5]
+> person_test<-person[8:10,-5]
+> person_train_labels<-person[1:7,5]
+> person_test_labels<-person[8:10,5]
+> person_model<-C5.0(person_train,as.factor(person_train_labels))
+> person_model
+
+Call:
+C5.0.default(x = person_train, y = as.factor(person_train_labels))
+
+Classification Tree
+Number of samples: 7 
+Number of predictors: 4 
+
+Tree size: 1 
+
+Non-standard options: attempt to group attributes
+
+> summary(person_model)
+
+Call:
+C5.0.default(x = person_train, y = as.factor(person_train_labels))
+
+
+C5.0 [Release 2.07 GPL Edition]         Fri Feb 04 11:02:39 2022
+-------------------------------
+
+Class specified by attribute `outcome'
+
+Read 7 cases (5 attributes) from undefined.data
+
+Decision tree:
+ No (7/1)
+
+
+Evaluation on training data (7 cases):
+
+            Decision Tree   
+          ----------------  
+          Size      Errors  
+
+             1    1(14.3%)   <<
+
+
+           (a)   (b)    <-classified as
+          ----  ----
+             6          (a): class No
+             1          (b): class Yes
+
+
+Time: 0.0 secs
+
+> person_pred<-pedict(person_model,person_test)
+Error in pedict(person_model, person_test) : 
+  could not find function "pedict"
+> person_pred<-predict(person_model,person_test)
+> person_pred
+[1] No No No
+Levels: No Yes
+> CrossTable(person_test_labels,person_pred,prop.chisq=FALSE)
+Error in CrossTable(person_test_labels, person_pred, prop.chisq = FALSE) : 
+  could not find function "CrossTable"
+> library(gmodels)
+> CrossTable(person_test_labels,person_pred,prop.chisq=FALSE)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  3 
+
+ 
+                   | person_pred 
+person_test_labels |        No | Row Total | 
+-------------------|-----------|-----------|
+                No |         1 |         1 | 
+                   |     0.333 |           | 
+-------------------|-----------|-----------|
+               Yes |         2 |         2 | 
+                   |     0.667 |           | 
+-------------------|-----------|-----------|
+      Column Total |         3 |         3 | 
+-------------------|-----------|-----------|
+
+ 
+> 
