@@ -1,0 +1,165 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> getwd()
+[1] "C:/Users/admin/Documents"
+> setwd("C:/Users/admin/Desktop/18 Fathimath Suhara")
+> library(e1071)
+> library(caTools)
+Error in library(caTools) : there is no package called ‘caTools’
+> utils:::menuInstallPkgs()
+--- Please select a CRAN mirror for use in this session ---
+also installing the dependency ‘bitops’
+
+trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/4.1/bitops_1.0-7.zip'
+Content type 'application/zip' length 42557 bytes (41 KB)
+downloaded 41 KB
+
+trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/4.1/caTools_1.18.2.zip'
+Content type 'application/zip' length 316449 bytes (309 KB)
+downloaded 309 KB
+
+package ‘bitops’ successfully unpacked and MD5 sums checked
+package ‘caTools’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\admin\AppData\Local\Temp\RtmpwLOzSp\downloaded_packages
+> library(caTools)
+> library(gmodels)
+Error in library(gmodels) : there is no package called ‘gmodels’
+> install.packages("gmodels")
+Installing package into ‘C:/Users/admin/Documents/R/win-library/4.1’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘gtools’, ‘gdata’
+
+trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/4.1/gtools_3.9.2.zip'
+Content type 'application/zip' length 367240 bytes (358 KB)
+downloaded 358 KB
+
+trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/4.1/gdata_2.18.0.zip'
+Content type 'application/zip' length 1264361 bytes (1.2 MB)
+downloaded 1.2 MB
+
+trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/4.1/gmodels_2.18.1.zip'
+Content type 'application/zip' length 114224 bytes (111 KB)
+downloaded 111 KB
+
+package ‘gtools’ successfully unpacked and MD5 sums checked
+package ‘gdata’ successfully unpacked and MD5 sums checked
+package ‘gmodels’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\admin\AppData\Local\Temp\RtmpwLOzSp\downloaded_packages
+> library(gmodels)
+> iris = read.csv("iris.csv ")
+> split <- sample.split(iris$species, SplitRatio = 0.7)
+> iris1 <- subset(iris, split == "TRUE")
+> iris2 <- subset(iris, split == "FALSE")
+> iris_train = iris1[,1:4]
+> iris_test = iris2[,1:4]
+> iris_train_labels = iris1[,5]
+> iris_test_labels = iris2[,5]
+> classifier_cl <- naiveBayes(iris_train,iris_train_labels )
+> classifier_cl
+
+Naive Bayes Classifier for Discrete Predictors
+
+Call:
+naiveBayes.default(x = iris_train, y = iris_train_labels)
+
+A-priori probabilities:
+iris_train_labels
+    Setosa Versicolor  Virginica 
+ 0.3333333  0.3333333  0.3333333 
+
+Conditional probabilities:
+                 sepal.length
+iris_train_labels     [,1]      [,2]
+       Setosa     5.051429 0.3441712
+       Versicolor 5.974286 0.5152628
+       Virginica  6.634286 0.6940685
+
+                 sepal.width
+iris_train_labels     [,1]      [,2]
+       Setosa     3.437143 0.3581700
+       Versicolor 2.742857 0.3164934
+       Virginica  2.974286 0.3211586
+
+                 petal.length
+iris_train_labels     [,1]      [,2]
+       Setosa     1.440000 0.1769014
+       Versicolor 4.328571 0.4218805
+       Virginica  5.605714 0.5890885
+
+                 petal.width
+iris_train_labels      [,1]       [,2]
+       Setosa     0.2342857 0.09056313
+       Versicolor 1.3400000 0.18502782
+       Virginica  2.0342857 0.26002586
+
+> iris_test_pred <- predict(classifier_cl, iris_test)
+> iris_test_pred
+ [1] Setosa     Setosa     Setosa     Setosa     Setosa     Setosa    
+ [7] Setosa     Setosa     Setosa     Setosa     Setosa     Setosa    
+[13] Setosa     Setosa     Setosa     Versicolor Versicolor Versicolor
+[19] Versicolor Versicolor Versicolor Virginica  Versicolor Versicolor
+[25] Versicolor Versicolor Versicolor Versicolor Versicolor Versicolor
+[31] Virginica  Virginica  Virginica  Virginica  Virginica  Versicolor
+[37] Virginica  Virginica  Virginica  Virginica  Versicolor Virginica 
+[43] Virginica  Virginica  Virginica 
+Levels: Setosa Versicolor Virginica
+> CrossTable(iris_test_labels, iris_test_pred,prop.chisq=FALSE)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  45 
+
+ 
+                 | iris_test_pred 
+iris_test_labels |     Setosa | Versicolor |  Virginica |  Row Total | 
+-----------------|------------|------------|------------|------------|
+          Setosa |         15 |          0 |          0 |         15 | 
+                 |      1.000 |      0.000 |      0.000 |      0.333 | 
+                 |      1.000 |      0.000 |      0.000 |            | 
+                 |      0.333 |      0.000 |      0.000 |            | 
+-----------------|------------|------------|------------|------------|
+      Versicolor |          0 |         14 |          1 |         15 | 
+                 |      0.000 |      0.933 |      0.067 |      0.333 | 
+                 |      0.000 |      0.875 |      0.071 |            | 
+                 |      0.000 |      0.311 |      0.022 |            | 
+-----------------|------------|------------|------------|------------|
+       Virginica |          0 |          2 |         13 |         15 | 
+                 |      0.000 |      0.133 |      0.867 |      0.333 | 
+                 |      0.000 |      0.125 |      0.929 |            | 
+                 |      0.000 |      0.044 |      0.289 |            | 
+-----------------|------------|------------|------------|------------|
+    Column Total |         15 |         16 |         14 |         45 | 
+                 |      0.333 |      0.356 |      0.311 |            | 
+-----------------|------------|------------|------------|------------|
+
+ 
+> 
