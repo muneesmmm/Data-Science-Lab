@@ -11,4 +11,4 @@ summary(person_model)
 person_pred<-predict(person_model,person_test)
 person_pred
 CrossTable(person_test_labels,person_pred,prop.chisq=FALSE)
-CrossTable(person_test_labels,person_pred,prop.chisq=FALSE)
+
