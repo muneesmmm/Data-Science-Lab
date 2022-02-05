@@ -1,7 +1,6 @@
 library(C50)
 library(gmodels)
 cricket<-read.csv("cricket.csv")
-cricket-train<-cricket[1:10,-5]
 cricket_train<-cricket[1:10,-5]
 cricket_test<-cricket[11:14,-5]
 cricket_train_labels<-cricket[1:10,5]
