@@ -15,4 +15,4 @@ print(matrix)
 def ScalingMatrix(sx=0,sy=0,sz=0):    
     return numpy.matrix([[sx,0,0,0],[0,sy,0,0],[0,0,sz,0],[0,0,0,0]])
 matrix=ScalingMatrix(2,2,2)
-print(matrix
+print(matrix)
