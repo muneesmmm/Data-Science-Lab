@@ -43,13 +43,6 @@ Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system prefe
 > student
   X Y
 1 5 7
-> survey1=survey[,2:3]
-> survey1
-  Y           Z
-1 6 Outstanding
-2 6        Good
-3 3        Good
-4 9 Outstanding
 > survey1=survey[,1:2]
 > survey1
   X Y
