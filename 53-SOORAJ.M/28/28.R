@@ -1,5 +1,5 @@
 print(getwd())
-setwd("/Users/mes22/Desktop/Sooraj/27")
+setwd("/Users/mes22/Desktop/Sooraj/28")
 library(C50)
 library(gmodels)
 cricket<-read.csv("cricket.csv")
