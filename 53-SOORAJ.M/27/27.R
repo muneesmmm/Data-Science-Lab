@@ -1,5 +1,5 @@
 print(getwd())
-setwd("/Users/mes22/Desktop/Sooraj/27")
+setwd("/Users/mes2/Desktop/Sooraj/27")
 library(C50)
 person<-read.csv("person.csv")
 person_train<-person[1:7,-5]
