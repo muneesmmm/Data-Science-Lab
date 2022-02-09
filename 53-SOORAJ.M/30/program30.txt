@@ -1,0 +1,60 @@
+
+R version 3.3.3 (2017-03-06) -- "Another Canoe"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.69 (7328) x86_64-apple-darwin13.4.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/mes2/.Rapp.history]
+
+> print(getwd())
+[1] "/Users/mes2/Desktop/Sooraj/30"
+> 
+> economy<-read.csv("economy.csv")
+> economy_train<-economy[1:20,]
+> economy_test<-economy[21:24,]
+> economy_model<-lm(Stock_Index_Price~Interest_Rate+Unemployment_Rate,data=economy_train)
+> economy_model
+
+Call:
+lm(formula = Stock_Index_Price ~ Interest_Rate + Unemployment_Rate, 
+    data = economy_train)
+
+Coefficients:
+      (Intercept)      Interest_Rate  Unemployment_Rate  
+           1125.0              374.0             -139.5  
+
+> economy_pred<-predict(economy-model,economy_test)
+Error in predict(economy - model, economy_test) : 
+  object 'model' not found
+> economy_pred<-predict(economy-model,economy_test)
+Error in predict(economy - model, economy_test) : 
+  object 'model' not found
+> conomy_pred<-predict(economy_model,economy_test)
+> economy_pred<-predict(economy_model,economy_test)
+> economy_pred
+      21       22       23       24 
+956.6129 914.7665 914.7665 928.7153 
+> 
