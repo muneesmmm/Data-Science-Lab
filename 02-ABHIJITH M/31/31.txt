@@ -1,0 +1,60 @@
+
+R version 3.3.3 (2017-03-06) -- "Another Canoe"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.69 (7328) x86_64-apple-darwin13.4.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/mes8/.Rapp.history]
+
+> print(getwd())
+[1] "/Users/mes8"
+> setwd("/Users/mes8/Desktop/Abhijith/31")
+> economy<-read.csv("economy.csv")
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'economy.csv': No such file or directory
+> 
+> heart<-read.csv("heart.csv")
+> heart_train<-heart[1:495,]
+> heart_test<-heart[496:498,]
+> heart_model<-lm(heart.disease~biking+smoking,data=heart_train)
+> heart-model
+Error: object 'model' not found
+> heart_model
+
+Call:
+lm(formula = heart.disease ~ biking + smoking, data = heart_train)
+
+Coefficients:
+(Intercept)       biking      smoking  
+    14.9946      -0.2003       0.1784  
+
+> heart_pred<-predict(heart_model,heart_test)
+> heart_pred
+     496      497      498 
+14.48211 10.21283 13.04232 
+> 
