@@ -1,0 +1,61 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> getwd()
+[1] "C:/Users/admin/Documents"
+> setwd("C:/Users/admin/Desktop/namithaC R prgm")
+> heart<-read.csv("heart.csv")
+> heart_train<-heart[1:495,]
+> heart_test<-heart[496:498,]
+> heart_model<-lm(heart.disease~biking+smoking,data=heart_train)
+> heart_model
+
+Call:
+lm(formula = heart.disease ~ biking + smoking, data = heart_train)
+
+Coefficients:
+(Intercept)       biking      smoking  
+    14.9946      -0.2003       0.1784  
+
+> summary(heart_model)
+
+Call:
+lm(formula = heart.disease ~ biking + smoking, data = heart_train)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.17848 -0.44730  0.03316  0.43460  1.93385 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 14.994623   0.080240  186.87   <2e-16 ***
+biking      -0.200295   0.001365 -146.74   <2e-16 ***
+smoking      0.178382   0.003539   50.41   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.6523 on 492 degrees of freedom
+Multiple R-squared:  0.9798,    Adjusted R-squared:  0.9797 
+F-statistic: 1.195e+04 on 2 and 492 DF,  p-value: < 2.2e-16
+
+> heart_pred<-predict(heart_model,heart_test)
+> heart_pred
+     496      497      498 
+14.48211 10.21283 13.04232 
+> 
