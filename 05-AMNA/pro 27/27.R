@@ -1,4 +1,4 @@
-> setwd("D:\Documents\Aman\Semester - 3\Lab\DATA SCIENCE LAB\27")
+> setwd("D:\Documents\Amna\Semester - 3\Lab\DATA SCIENCE LAB\27")
 > library(C50)
 > library(gmodels)
 > person<-read.csv("person.csv")
