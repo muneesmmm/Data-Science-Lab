@@ -1,0 +1,93 @@
+
+R version 3.3.3 (2017-03-06) -- "Another Canoe"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.69 (7328) x86_64-apple-darwin13.4.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/mes22/.Rapp.history]
+
+> print(getwd())
+[1] "/Users/mes22"
+> setwd("/Users/mes22/Desktop/R/28")
+> library(C50)
+> library(gmodels)
+> cricket<-read.csv("cricket.csv")
+> cricket_train<-cricket[1:10,-5]
+> cricket_test<-cricket[11:14,-5]
+> cricket_train_labels<-cricket[1:10,5]
+> cricket_test_labels<-cricket[11:14,5]
+> cricket_model<-C5.0(cricket_train,as.factor(cricket_train_labels))
+> cricket_model
+
+Call:
+C5.0.default(x = cricket_train, y = as.factor(cricket_train_labels))
+
+Classification Tree
+Number of samples: 10 
+Number of predictors: 4 
+
+Tree size: 2 
+
+Non-standard options: attempt to group attributes
+
+> cricket_pred<-predict(cricket_model,cricket_test)
+> cricket_pred
+[1] No  Yes Yes Yes
+Levels: No Yes
+> CrossTable(cricket_test_labels,cricket_pred,prop.chisq=FALSE)
+
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|           N / Row Total |
+|           N / Col Total |
+|         N / Table Total |
+|-------------------------|
+
+ 
+Total Observations in Table:  4 
+
+ 
+                    | cricket_pred 
+cricket_test_labels |        No |       Yes | Row Total | 
+--------------------|-----------|-----------|-----------|
+                 No |         0 |         1 |         1 | 
+                    |     0.000 |     1.000 |     0.250 | 
+                    |     0.000 |     0.333 |           | 
+                    |     0.000 |     0.250 |           | 
+--------------------|-----------|-----------|-----------|
+                Yes |         1 |         2 |         3 | 
+                    |     0.333 |     0.667 |     0.750 | 
+                    |     1.000 |     0.667 |           | 
+                    |     0.250 |     0.500 |           | 
+--------------------|-----------|-----------|-----------|
+       Column Total |         1 |         3 |         4 | 
+                    |     0.250 |     0.750 |           | 
+--------------------|-----------|-----------|-----------|
+
+ 
+> 
