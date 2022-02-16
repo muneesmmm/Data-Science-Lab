@@ -1,7 +1,0 @@
-fin = open("1.txt", "rt")
-str = fin.read()
-str = str.replace('pyton', 'python')
-fin.close()
-fin = open("1.txt", "wt")
-fin.write(str)
-fin.close()
