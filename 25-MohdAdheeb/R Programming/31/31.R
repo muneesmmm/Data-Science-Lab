@@ -17,7 +17,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> setwd("D:\Documents\Aman\Semester - 3\Lab\DATA SCIENCE LAB\31")
+> setwd("D:\Documents\Adheeb\Semester - 3\Lab\DATA SCIENCE LAB\31")
 > library(C50)
 > library(gmodels)
 > heart<-read.csv("heart.csv")
@@ -51,7 +51,7 @@ biking      -0.201647   0.001516 -133.03   <2e-16 ***
 smoking      0.177442   0.003902   45.47   <2e-16 ***
 ---
 Signif. codes:  
-0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+0 â€˜***â€™ 0.001 â€˜**â€™ 0.01 â€˜*â€™ 0.05 â€˜.â€™ 0.1 â€˜ â€™ 1
 
 Residual standard error: 0.6644 on 417 degrees of freedom
 Multiple R-squared:  0.9793,    Adjusted R-squared:  0.9792 
