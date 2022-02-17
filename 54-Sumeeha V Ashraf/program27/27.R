@@ -1,0 +1,74 @@
+> setwd("D:\Documents\Sumeeha\Semester - 3\Lab\DATA SCIENCE LAB\27")
+> library(C50)
+> library(gmodels)
+> person<-read.csv("person.csv")
+> person_train<-person[1:7,-5]
+> person_test<-person[8:10,-5]
+> person_train_labels<-person[1:7,5]
+> person_test_labels<-person[8:10,5]
+> person_model<-C5.0(person_train,as.factor(person_train_labels))
+> person_model
+
+Call:
+C5.0.default(x = person_train, y
+ = as.factor(person_train_labels))
+
+Classification Tree
+Number of samples: 7 
+Number of predictors: 4 
+
+Tree size: 1 
+
+Non-standard options: attempt to group attributes
+
+> summary(person_model)
+
+Call:
+C5.0.default(x = person_train, y
+ = as.factor(person_train_labels))
+
+
+C5.0 [Release 2.07 GPL Edition]         Fri Feb 04 12:00:15 2022
+-------------------------------
+
+Class specified by attribute `outcome'
+Read 7 cases (5 attributes) from undefined.data
+Decision tree:
+ No (7/1)
+Evaluation on training data (7 cases):
+            Decision Tree   
+          ----------------  
+          Size      Errors  
+             1    1(14.3%)   <<
+           (a)   (b)    <-classified as
+          ----  ----
+             6          (a): class No
+             1          (b): class Yes
+Time: 0.0 secs
+> person_pred<-predict(person_model,person_test)
+> person_pred
+[1] No No No
+Levels: No Yes
+> CrossTable(person_test_labels,person_pred,prop.chisq=FALSE)
+ 
+   Cell Contents
+|-------------------------|
+|                       N |
+|         N / Table Total |
+|-------------------------|
+ 
+Total Observations in Table:  3 
+ 
+                   | person_pred 
+person_test_labels |        No | Row Total | 
+-------------------|-----------|-----------|
+                No |         1 |         1 | 
+                   |     0.333 |           | 
+-------------------|-----------|-----------|
+               Yes |         2 |         2 | 
+                   |     0.667 |           | 
+-------------------|-----------|-----------|
+      Column Total |         3 |         3 | 
+-------------------|-----------|-----------|
+ 
+> 
