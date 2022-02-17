@@ -17,7 +17,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> setwd("D:\Documents\Aman\Semester - 3\Lab\DATA SCIENCE LAB\32")
+> setwd("D:\Documents\Sumeeha\Semester - 3\Lab\DATA SCIENCE LAB\32")
 > insurance<-read.csv("insurance.csv")
 > insurance_train<-insurance[1:1000,]
 > insurance_test<-insurance[1001:1338,]
@@ -64,7 +64,7 @@ regionnorthwest   -439.90     543.63  -0.809  0.41861
 regionsoutheast  -1291.29     534.51  -2.416  0.01588 *  
 regionsouthwest  -1263.15     537.30  -2.351  0.01892 *  
 ---
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Signif. codes:  0 â€˜***â€™ 0.001 â€˜**â€™ 0.01 â€˜*â€™ 0.05 â€˜.â€™ 0.1 â€˜ â€™ 1
 
 Residual standard error: 5934 on 991 degrees of freedom
 Multiple R-squared:  0.7569,    Adjusted R-squared:  0.7549 
