@@ -17,7 +17,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> setwd("D:\Documents\Aman\Semester - 3\Lab\DATA SCIENCE LAB\30")
+> setwd("D:\Documents\Ajnas\Semester - 3\Lab\DATA SCIENCE LAB\30")
 > economy<-read.csv("economy.csv")
 > economy_train<-economy[1:20,]
 > economy_test<-economy[21:24,]
@@ -49,7 +49,7 @@ Interest_Rate       374.02      75.56   4.950 0.000122 ***
 Unemployment_Rate  -139.49      82.48  -1.691 0.109046    
 ---
 Signif. codes:  
-0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+0 â€˜***â€™ 0.001 â€˜**â€™ 0.01 â€˜*â€™ 0.05 â€˜.â€™ 0.1 â€˜ â€™ 1
 
 Residual standard error: 44.2 on 17 degrees of freedom
 Multiple R-squared:  0.9444,    Adjusted R-squared:  0.9379 
