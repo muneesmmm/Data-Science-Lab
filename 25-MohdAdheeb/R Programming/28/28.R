@@ -17,7 +17,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> setwd("D:\Documents\Aman\Semester - 3\Lab\DATA SCIENCE LAB\28")
+> setwd("D:\Documents\Adheeb\Semester - 3\Lab\DATA SCIENCE LAB\28")
 > library(C50)
 > library(gmodels)
 > cricket<-read.csv("cricket.csv")
