@@ -1,4 +1,4 @@
-> setwd("D:\Documents\Aman\Semester - 3\Lab\DATA SCIENCE LAB\29")
+> setwd("D:\Documents\Adheeb\Semester - 3\Lab\DATA SCIENCE LAB\29")
 > library(C50)
 > library(gmodels)
 > credit<-read.csv("credit.csv")
