@@ -29,7 +29,7 @@ WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will wo
 Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
 [History restored from /Users/mca/.Rapp.history]
 
-> setwd("/Users/mca/Desktop/Aman/R Programming/24")
+> setwd("/Users/mca/Desktop/Ab/R Programming/24")
 > library(e1071)
 Warning message:
 package 'e1071' was built under R version 3.3.2 
