@@ -1,157 +1,149 @@
-
-R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
-Copyright (C) 2016 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
-
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under certain conditions.
-Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
-
-R is a collaborative project with many contributors.
-Type 'contributors()' for more information and
-'citation()' on how to cite R or R packages in publications.
-
-Type 'demo()' for some demos, 'help()' for on-line help, or
-'help.start()' for an HTML browser interface to help.
-Type 'q()' to quit R.
-
-> setwd("C:\Users\admin\Desktop\58-ummuhabeeba")
-Error: '\U' used without hex digits in character string starting ""C:\U"
-> print(getwd())
-[1] "C:/Users/admin/Documents"
-> setwd("C:\Users\admin\Desktop\58-ummuhabeeba")
-Error: '\U' used without hex digits in character string starting ""C:\U"
-> setwd("C:/Users/admin/Desktop/58-ummuhabeeba")
-> print(getwd())
-[1] "C:/Users/admin/Desktop/58-ummuhabeeba"
-> library(class)
-> library(gmodels)
-Error in library(gmodels) : there is no package called �gmodels�
-> install.packages("gmodels")
-Warning in install.packages("gmodels") :
-  'lib = "C:/Program Files/R/R-3.3.1/library"' is not writable
-Error in install.packages("gmodels") : unable to install packages
-> wbcd = read.csv("wisc_bc_data.csv")
-> normalize <- function(x)
-+ {
-+ return ((x - min(x)) / (max(x) - min(x)))
-+ }
-Error: unexpected end of input
-> normalize <- function(x)\
-Error: unexpected input in "normalize <- function(x)\"
-> library(class)
-> library(gmodels)
-Error in library(gmodels) : there is no package called �gmodels�
-> library(gmodels)
-Error in library(gmodels) : there is no package called �gmodels�
-> q()
-> utils:::menuInstallLocal()
-> utils:::menuInstallPkgs()
+ utils:::menuInstallPkgs()
 --- Please select a CRAN mirror for use in this session ---
-Warning: failed to download mirrors file (cannot open URL 'https://cran.r-project.org/CRAN_mirrors.csv'); using local file 'C:/PROGRA~1/R/R-33~1.1/doc/CRAN_mirrors.csv'
-Warning in install.packages(NULL, .libPaths()[1L], dependencies = NA, type = type) :
-  'lib = "C:/Program Files/R/R-3.3.1/library"' is not writable
-also installing the dependencies �gtools�, �gdata�
+also installing the dependencies ‘Rcpp’, ‘stringr’, ‘libcoin’, ‘mvtnorm’, ‘Formula’, ‘inum’, ‘reshape2’, ‘partykit’, ‘Cubist’
 
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/Rcpp_1.0.8.zip'
+Content type 'application/zip' length 3318072 bytes (3.2 MB)
+downloaded 3.2 MB
 
-  There are binary versions available but the source versions are later:
-        binary source needs_compilation
-gtools   3.5.0  3.9.2              TRUE
-gmodels 2.16.2 2.18.1             FALSE
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/stringr_1.4.0.zip'
+Content type 'application/zip' length 217015 bytes (211 KB)
+downloaded 211 KB
 
-  Binaries will be installed
-trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/3.3/gtools_3.5.0.zip'
-Content type 'application/zip' length 144033 bytes (140 KB)
-downloaded 140 KB
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/libcoin_1.0-9.zip'
+Content type 'application/zip' length 1005126 bytes (981 KB)
+downloaded 981 KB
 
-trying URL 'http://ftp.ussg.iu.edu/CRAN/bin/windows/contrib/3.3/gdata_2.18.0.zip'
-Content type 'application/zip' length 1186908 bytes (1.1 MB)
-downloaded 1.1 MB
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/mvtnorm_1.1-3.zip'
+Content type 'application/zip' length 271312 bytes (264 KB)
+downloaded 264 KB
 
-package �gtools� successfully unpacked and MD5 sums checked
-package �gdata� successfully unpacked and MD5 sums checked
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/Formula_1.2-4.zip'
+Content type 'application/zip' length 177681 bytes (173 KB)
+downloaded 173 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/inum_1.0-4.zip'
+Content type 'application/zip' length 39410 bytes (38 KB)
+downloaded 38 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/reshape2_1.4.4.zip'
+Content type 'application/zip' length 817934 bytes (798 KB)
+downloaded 798 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/partykit_1.2-15.zip'
+Content type 'application/zip' length 2455480 bytes (2.3 MB)
+downloaded 2.3 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/Cubist_0.3.0.zip'
+Content type 'application/zip' length 993541 bytes (970 KB)
+downloaded 970 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/windows/contrib/4.1/C50_0.1.5.zip'
+Content type 'application/zip' length 476525 bytes (465 KB)
+downloaded 465 KB
+
+package ‘Rcpp’ successfully unpacked and MD5 sums checked
+package ‘stringr’ successfully unpacked and MD5 sums checked
+package ‘libcoin’ successfully unpacked and MD5 sums checked
+package ‘mvtnorm’ successfully unpacked and MD5 sums checked
+package ‘Formula’ successfully unpacked and MD5 sums checked
+package ‘inum’ successfully unpacked and MD5 sums checked
+package ‘reshape2’ successfully unpacked and MD5 sums checked
+package ‘partykit’ successfully unpacked and MD5 sums checked
+package ‘Cubist’ successfully unpacked and MD5 sums checked
+package ‘C50’ successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-        C:\Users\admin\AppData\Local\Temp\RtmpikKiqa\downloaded_packages
-installing the source package �gmodels�
+        C:\Users\admin\AppData\Local\Temp\RtmpasCP56\downloaded_packages
+> library(C50)
+> person<-read.csv("person.csv")
+> person_train<-person[1:7,-5]
+> person_test<-person[8:10,-5]
+> person_train_labels<-person[1:7,5]
+> person_test_labels<-person[8:10,5]
+> person_model<-C5.0(person_train,as.factor(person_train_labels))
+> person_model
 
-trying URL 'http://ftp.ussg.iu.edu/CRAN/src/contrib/gmodels_2.18.1.tar.gz'
-Content type 'application/x-gzip' length 33783 bytes (32 KB)
-downloaded 32 KB
+Call:
+C5.0.default(x = person_train, y = as.factor(person_train_labels))
 
-* installing *source* package 'gmodels' ...
-** package 'gmodels' successfully unpacked and MD5 sums checked
-** R
-** preparing package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** testing if installed package can be loaded
-*** arch - i386
-*** arch - x64
-* DONE (gmodels)
+Classification Tree
+Number of samples: 7 
+Number of predictors: 4 
 
-The downloaded source packages are in
-        �C:\Users\admin\AppData\Local\Temp\RtmpikKiqa\downloaded_packages�
-Warning message:
-In download.file(url, destfile = f, quiet = TRUE) :
-  InternetOpenUrl failed: ''
+Tree size: 1 
+
+Non-standard options: attempt to group attributes
+
+> summary(person_model)
+
+Call:
+C5.0.default(x = person_train, y = as.factor(person_train_labels))
+
+
+C5.0 [Release 2.07 GPL Edition]         Fri Feb 04 11:02:39 2022
+-------------------------------
+
+Class specified by attribute `outcome'
+
+Read 7 cases (5 attributes) from undefined.data
+
+Decision tree:
+ No (7/1)
+
+
+Evaluation on training data (7 cases):
+
+            Decision Tree   
+          ----------------  
+          Size      Errors  
+
+             1    1(14.3%)   <<
+
+
+           (a)   (b)    <-classified as
+          ----  ----
+             6          (a): class No
+             1          (b): class Yes
+
+
+Time: 0.0 secs
+
+> person_pred<-pedict(person_model,person_test)
+Error in pedict(person_model, person_test) : 
+  could not find function "pedict"
+> person_pred<-predict(person_model,person_test)
+> person_pred
+[1] No No No
+Levels: No Yes
+> CrossTable(person_test_labels,person_pred,prop.chisq=FALSE)
+Error in CrossTable(person_test_labels, person_pred, prop.chisq = FALSE) : 
+  could not find function "CrossTable"
 > library(gmodels)
-> wbcd = read.csv("wisc_bc_data.csv")
-> library(class)
-> library(gmodels)
-> wbcd = read.csv("wisc_bc_data.csv")
-> normalize <- function(x)
-+ {
-+ return ((x - min(x)) / (max(x) - min(x)))
-+ }
-> wbcd_n = as.data.frame(lapply(wbcd[3:31], normalize))
-> wbcd_train = wbcd_n[1:469, ]
-> wbcd_test = wbcd_n[470:569, ]
-> wbcd_train_labels = wbcd[1:469, 2]
-> wbcd_test_labels = wbcd[470:569, 2]
-> wbcd_test_pred = knn(wbcd_train, wbcd_test,
-+ wbcd_train_labels,21)
-> wbcd_test_pred
-  [1] B B B B B B B B B B M B B B B B B B M B B B B M B B B B B M M B M B M B B B B B M B B M B B B M M B B B M B B B B B B B B B B B M B M M B B B B B B B B B B B B B
- [82] B B B B B B B B B B B B M M M M M M B
-Levels: B M
-> save.image("C:\\Users\\admin\\Desktop\\58-ummuhabeeba\\23.RData")
-> CrossTable(x = wbcd_test_labels, y = wbcd_test_pred,
-+ prop.chisq=FALSE)
+> CrossTable(person_test_labels,person_pred,prop.chisq=FALSE)
 
  
    Cell Contents
 |-------------------------|
 |                       N |
-|           N / Row Total |
-|           N / Col Total |
 |         N / Table Total |
 |-------------------------|
 
  
-Total Observations in Table:  100 
+Total Observations in Table:  3 
 
  
-                 | wbcd_test_pred 
-wbcd_test_labels |         B |         M | Row Total | 
------------------|-----------|-----------|-----------|
-               B |        77 |         0 |        77 | 
-                 |     1.000 |     0.000 |     0.770 | 
-                 |     0.975 |     0.000 |           | 
-                 |     0.770 |     0.000 |           | 
------------------|-----------|-----------|-----------|
-               M |         2 |        21 |        23 | 
-                 |     0.087 |     0.913 |     0.230 | 
-                 |     0.025 |     1.000 |           | 
-                 |     0.020 |     0.210 |           | 
------------------|-----------|-----------|-----------|
-    Column Total |        79 |        21 |       100 | 
-                 |     0.790 |     0.210 |           | 
------------------|-----------|-----------|-----------|
+                   | person_pred 
+person_test_labels |        No | Row Total | 
+-------------------|-----------|-----------|
+                No |         1 |         1 | 
+                   |     0.333 |           | 
+-------------------|-----------|-----------|
+               Yes |         2 |         2 | 
+                   |     0.667 |           | 
+-------------------|-----------|-----------|
+      Column Total |         3 |         3 | 
+-------------------|-----------|-----------|
 
  
-> save.image("C:\\Users\\admin\\Desktop\\58-ummuhabeeba\\23.RData")
 > 
