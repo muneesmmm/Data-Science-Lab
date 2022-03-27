@@ -52,4 +52,35 @@ Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system prefe
 13     orange         7           3     fruit
 14       pear        10           7     fruit
 15     shrimp         2           3   protein
+> tomato=data.frame(ingredient="tomato",sweetness=6,crunchiness=4)
+> tomato
+  ingredient sweetness crunchiness
+1     tomato         6           4
+> food1=food[,2:3]
+> food1
+   Sweetness Crunchiness
+1         10           9
+2          1           4
+3         10           1
+4          7          10
+5          3          10
+6          1           1
+7          2           8
+8          3           1
+9          8           5
+10         3           7
+11         1           9
+12         3           6
+13         7           3
+14        10           7
+15         2           3
+> tomato1=tomato[,2:3]
+> tomato1
+  sweetness crunchiness
+1         6           4
+> library(class)
+> pred=knn(food1,tomato1,food$FoodType,k=1)
+> pred
+[1] fruit
+Levels: fruit protein vegetable
 > 
