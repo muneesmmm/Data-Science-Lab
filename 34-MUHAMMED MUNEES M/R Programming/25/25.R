@@ -1,0 +1,79 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.68 (7238) x86_64-apple-darwin13.4.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/mca/.Rapp.history]
+
+> setwd("/Users/mca/Desktop/Aman/R Programming/25")
+> library(e1071)
+Warning message:
+package 'e1071' was built under R version 3.3.2 
+> cars = read.csv("cars.csv")
+> cars_train = cars[,1:4]
+> cars_test=data.frame(Colour="red",Type="SUV",Origin="domestic",Stolen="yes")
+> classifier_cl <- naiveBayes(cars_train,cars$Stolen)
+> classifier_cl
+
+Naive Bayes Classifier for Discrete Predictors
+
+Call:
+naiveBayes.default(x = cars_train, y = cars$Stolen)
+
+A-priori probabilities:
+cars$Stolen
+ no yes 
+0.5 0.5 
+
+Conditional probabilities:
+           Example
+cars$Stolen [,1]     [,2]
+        no   5.8 2.863564
+        yes  5.2 3.492850
+
+           Colour
+cars$Stolen red yellow
+        no  0.4    0.6
+        yes 0.6    0.4
+
+           Type
+cars$Stolen SUV sports
+        no  0.6    0.4
+        yes 0.2    0.8
+
+           Origin
+cars$Stolen domestic imported
+        no       0.6      0.4
+        yes      0.4      0.6
+
+> carss_test_pred <- predict(classifier_cl, cars_test)
+> cat("Prediction of Stolen or not:\n")
+Prediction of Stolen or not:
+> carss_test_pred
+[1] no
+Levels: no yes
+> 
